@@ -47,3 +47,5 @@ Simple setup is to set variable below and follow along.
 symbols = 'AAPL, IBM, MSFT, YHOO, SCO'
 
 ```
+
+### Exercises:
