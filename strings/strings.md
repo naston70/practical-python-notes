@@ -48,4 +48,4 @@ symbols = 'AAPL, IBM, MSFT, YHOO, SCO'
 
 ```
 
-### Exercises:
+### Exercises on interpreter
