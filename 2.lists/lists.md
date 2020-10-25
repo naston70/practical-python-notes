@@ -38,4 +38,56 @@ List are indexed by integers starting at 0 and a negative indices starts the cou
 >>>c[-1]
 6
 ```
+Items can be changed ```c[0] = 5```
+
+```len(c)```gives length of the list and membership is tested using ``` in or not in ```
+
+## List Iteration and Search
+
+use the ```for```keyword to iterate over the contents of a list
+
+```python
+for contents in the_list:
+	# do something, with contents
+
+```
+
+To find the index of an item in the list use, ```index()``` 
+
+```python
+c.index(2)   #1
+```
+
+If the element is contained more than once, the first occurence will be returned, if the element is not found a ```ValueError```
+
+## List removal
+
+Items can be removed either by element value of index, once an item is removed the other items move down to fill the space. If there is more than one occurence then ```remove()```will only remove the first
+
+```python
+# using the value
+
+c.remove(3)
+
+# using the index
+
+del c[0]
+```
+
+## List Sorting
+
+Lists can be sorted in place, sorted in reverse and works with any ordered data.
+
+```python
+>>> s = [1,2,5,3,2,1,87,54,32,78]
+>>> s.sort()
+>>> s
+[1, 1, 2, 2, 3, 5, 32, 54, 78, 87]
+>>> s.sort(reverse=True)
+>>> s
+[87, 78, 54, 32, 5, 3, 2, 2, 1, 1]
+>>>
+```
+
+
 
