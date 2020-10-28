@@ -89,5 +89,119 @@ Lists can be sorted in place, sorted in reverse and works with any ordered data.
 >>>
 ```
 
+### Exercise from interpretor
+
+>>> symbols = 'HPQ,AAPL,IBM,MSFT,YHOO,DOA,GOOG'
+>>> symlist = symbols.split(',')
+>>> symlist
+['HPQ', 'AAPL', 'IBM', 'MSFT', 'YHOO', 'DOA', 'GOOG']
+>>> sym
+symbols  symlist
+>>> symlist[0]
+'HPQ'
+>>> symlist[-1]
+'GOOG'
+>>> symlist[-2]
+'DOA'
+>>> symlist[2] = AIG
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'AIG' is not defined
+>>> symlist[2] = 'AIG'
+>>> symlist
+['HPQ', 'AAPL', 'AIG', 'MSFT', 'YHOO', 'DOA', 'GOOG']
+>>> #cretae an empty list and append an item to it
+>>> mysyms = []
+>>> mysyms.append('GOOG')
+>>> mysyms
+['GOOG']
+>>> #you can reassign a portion of a list to another list.
+>>> symlist[-2:] = mysyms
+>>> symlist
+['HPQ', 'AAPL', 'AIG', 'MSFT', 'YHOO', 'GOOG']
+>>> #Looping over list items
+>>>
+>>> for s in symlist: print('s =' s)
+  File "<stdin>", line 1
+    for s in symlist: print('s =' s)
+                                  ^
+SyntaxError: invalid syntax
+>>> for s in symlist: print('s =', s)
+...
+s = HPQ
+s = AAPL
+s = AIG
+s = MSFT
+s = YHOO
+s = GOOG
+>>> # Membership Tests
+>>> 'AIG' in syml
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'syml' is not defined
+>>> 'AIG' in symlist
+True
+>>> 'AA' in symlist
+False
+>>> 'CAT' not in symlist
+True
+>>> # Appending, inserting and deleting items
+>>>
+>>> symlist
+['HPQ', 'AAPL', 'AIG', 'MSFT', 'YHOO', 'GOOG']
+>>> symlist.append('RHT')
+>>> symlist
+['HPQ', 'AAPL', 'AIG', 'MSFT', 'YHOO', 'GOOG', 'RHT']
+>>> #Use the insert() method to insert the symbol 'AA' as the second item in the list.
+>>>
+>>> symlist.insert('AA',1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object cannot be interpreted as an integer
+>>> symlist.insert(1, 'AA')
+>>> symlist
+['HPQ', 'AA', 'AAPL', 'AIG', 'MSFT', 'YHOO', 'GOOG', 'RHT']
+>>> symlist.remove('MSFT')
+>>> symlist.append('YHOO')
+>>> symlist.index('YHOO')
+4
+>>> symlist.count('YHOO')
+2
+>>> symlist.remove('YHOO')
+>>> symlist
+['HPQ', 'AA', 'AAPL', 'AIG', 'GOOG', 'RHT', 'YHOO']
+>>> # SORTING
+>>> symlist.sort()
+>>> symlist
+['AA', 'AAPL', 'AIG', 'GOOG', 'HPQ', 'RHT', 'YHOO']
+>>> symlist.sort(reverse=True)
+>>> symlist
+['YHOO', 'RHT', 'HPQ', 'GOOG', 'AIG', 'AAPL', 'AA']
+>>> # Lists of anything
+>>>
+>>> nums =[101,102,103]
+>>> items = ['spam', symlist, nums]
+>>> items
+['spam', ['YHOO', 'RHT', 'HPQ', 'GOOG', 'AIG', 'AAPL', 'AA'], [101, 102, 103]]
+>>> #Access items in nested lists using multiple indexing operations
+>>>
+>>> items[0]
+'spam'
+>>> items[0][0]
+'s'
+>>> items[1]
+['YHOO', 'RHT', 'HPQ', 'GOOG', 'AIG', 'AAPL', 'AA']
+>>> items[1][1]
+'RHT'
+>>> items[1][1][1]
+'H'
+>>> items[1][1][2]
+'T'
+>>> items[2]
+[101, 102, 103]
+>>> items[2][1]
+102
+>>> # As a general rule better to keep nested lists simple Mixing of data and over complicated nesting... not good
+
 
 
