@@ -60,3 +60,10 @@ It can be difficult to predict all errors, exception handling often gets added a
 
 ## Raising Exceptions
 
+To raise an exception use the ```raise```statement.
+
+```python
+raise RuntimeError('oh my')
+```
+
+This will cause the program to abort with an exception traceback. Unless caught by a try-except block
