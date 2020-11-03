@@ -67,3 +67,28 @@ raise RuntimeError('oh my')
 ```
 
 This will cause the program to abort with an exception traceback. Unless caught by a try-except block
+
+## Exercises:
+
+Defining a simple function: If the first statement of a function is a string, it serves a documentation.
+
+```python
+def greeting(name):
+    'Issues a greeting'
+     print('Hello', name)
+
+>>> greeting('Guido')
+Hello Guido
+>>> greeting('Paula')
+Hello Paula
+>>>
+```
+Using ```help(greeting)``` will give the string doc
+
+Exercise 1.30: Turning a script into a function (Turn pcost.py into a function - stored in Work folder)
+
+When running pcost.py you should see the same output as before. After running program the function can also be called interactively using:
+
+```$ python3 -i pcost.py```
+
+This call the function in interactive mode and cann be useful when experimenting, testing and debugging code
