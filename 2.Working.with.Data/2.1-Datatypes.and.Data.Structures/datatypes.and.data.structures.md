@@ -76,3 +76,47 @@ To use the tuple elsewhere, you can unpack its parts into variables.
 ```name, share, price = s```
 
 Variables on the left must match amount in the tuple structure.
+
+## Tuples vs. Lists
+
+Tuples look like read-only lists. However, tuples are most often used for a single item consisting of multiple parts. Lists are usually a collection of distinct items, usually all of the same type. 
+
+```python
+record = ('Goog', 100, 490,1) #tuple
+
+symbol = ['Goog', 'IBM', 'AAPL'] #list
+```
+
+## Dictionaries
+
+A dictionary is a mapping of keys to values. It is also sometimes called a hash table or associative array. The key serves as indicies for accessing values.
+
+```python
+s = {'name': 'GOOG',
+	 'shares': 100
+	 'price': 490.1
+}
+```
+
+## Common Operations
+
+Getting values from a dictionary using the key names.
+
+```python
+print(s['name'], s['shares'])
+GOOG 100
+```
+
+To add or modify values assign using the key names.
+
+```python
+s['shares'] = 75
+s['date'] = '6/6/2020'
+```
+To delete a value use the ```del```statement. ```del s['date']```
+
+Why use dictionaries?
+
+Dictionaries are useful when there are many different values and those values might be modified or manipulated. Dictionaries make code more readable.
+
+Exercises.
