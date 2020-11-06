@@ -17,3 +17,4 @@ def read_prices(filename):
 		
 
 	return d
+

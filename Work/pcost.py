@@ -42,7 +42,7 @@ def portfolio_cost(filename):
 		except ValueError:
 			print('Field missing', row)
 	f.close()
-
+	return cost
 
 
 if len(sys.argv) == 2:
