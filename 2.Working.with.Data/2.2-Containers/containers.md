@@ -149,9 +149,75 @@ tech_stocks = set(['IBM', 'AAPL', 'MSFT'])
 
 Sets can be useful for membership tests.
 
+```python 
+>>>tech_stocks
+set({'IBM', 'AAPL', 'MSFT'})
+>>> 'IBM' in tech_stocks
+True
+>>>'TESLA' in tech_stocks
+False
+```
+Sets are also useful for duplicate elimination
+
+```python
+
+names = ['IBM', 'AAPL', 'GOOG', 'IBM', 'GOOG', 'YHOO']
+
+unique = set(names)
+# unique = set(['IBM', 'AAPL','GOOG','YHOO'])
+```
+## Exercise
+
+A list of tuples:
+
+Code from previous exercise should look similar to the following:
+
+```python
+# pcost.py
+
+import csv
+
+def portfolio_cost(filename):
+    '''Computes the total cost (shares*price) of a portfolio file'''
+    total_cost = 0.0
+
+    with open(filename, 'rt') as f:
+        rows = csv.reader(f)
+        headers = next(rows)
+        for row in rows:
+            nshares = int(row[1])
+            price = float(row[2])
+            total_cost += nshares * price
+    return total_cost
+```
+
+Create report.py, in that file define a function read_portfolio(filename) that opens a given portfolio file and reads it into a list of tuples. 
 
 
+Sample code for first part of exercise
 
+```python
+# report.py
+#
+# Exercise 2.4
+import csv
+
+def read_portfolio(filename):
+	'''	Opens a given portfolio file and reads it into a list of tuples'''
+	portfolio = []
+
+	with open(filename, 'rt') as f:
+		rows = csv.reader(f)
+		headers = next(rows)
+		
+		for row in rows:
+			#print(row)
+			holding = (row[0], int(row[1]), float(row[2]))
+			portfolio.append(holding)
+		
+		return portfolio
+
+```
 
 
 
