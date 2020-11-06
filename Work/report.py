@@ -12,9 +12,11 @@ def read_portfolio(filename):
 		headers = next(rows)
 		
 		for row in rows:
-			#print(row)
-			holding = (row[0], int(row[1]), float(row[2]))
-			portfolio.append(holding)
-		
-		return portfolio
+			d = {
+				'name' : row[0],
+				'shares' : int(row[1]),
+				'price' : float(row[2])
+			}
+			portfolio.append(d)
+	return portfolio
 
