@@ -45,4 +45,17 @@ Sequences of the same type can be concatenated ```a + b```
 
 ## SLICING
 
-Slicing takes a subsequence from a sequence. The syntax is s[start:end]. Where start and end are indexes of the subsequence you want.
+Slicing takes a subsequence from a sequence. The syntax is ```s[start:end]```. Where start and end are indexes of the subsequence you want.
+
+```python
+
+a = [0,1,2,3,4,5,6,7,8]
+
+a[2:5] = [2-4]
+a[-5]  = [4-8]
+a[:3]  = [0-2]
+```
+
+Indices (start and end) must be integers
+Slices do not include the end value.
+If indices are omitted, the default to the beginning or end of the list
