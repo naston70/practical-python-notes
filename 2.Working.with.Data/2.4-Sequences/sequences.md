@@ -200,3 +200,36 @@ for x in s:
 ```
 Enumerate is less typing and runs slighlty faster
 
+## FOR AND TUPLES
+
+You can iterate with multiple iteration variables
+
+```python 
+points = [(1,4),(10,20),(23,14)]
+
+for x, y in points:
+	# x =1 y = 4
+	# x =10 y = 20
+	# x =23 y = 14
+```
+
+When using multiple variables, each tuple in unpacked into a set of iteration variables. The numebr of variables must match the of items in each tuple
+
+
+## zip() FUNCTION
+
+The ```zip()```function takes multiple sequences and makes an iterator that combines them.
+
+```python
+
+columns = ['name', 'shares', 'price']
+values  = ['goog', 100, 490.1]
+
+pairs = zip(columns, values)
+# ('name', 'goog'), ('shares', 100)
+```
+
+To get the result you must iterate. You can use multiple variables to unpack tuples as shown earlier.
+
+
+
