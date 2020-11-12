@@ -142,3 +142,61 @@ for line in lines:
 This is useful when the current item is not of interest or needs to be ignored in the processing.
 
 ## LOOPING OVER INTEGERS
+
+If you need to count, use ```range()```
+
+```python
+for i in range:
+	do_something
+
+```
+Correct syntax is ```range([start,] end [,step])```
+
+```python
+
+for i in range(100): #i = 0-99
+	pass
+
+for x in range(10,20): #i = 10-19
+	pass
+
+for x in range(10,50,2): # i = 10,12...,48)
+	pass
+
+```
+
+The ending value is never included mirroring the behaviour of slices
+```start```is optional with a default of 0
+```step```is optional, default of 0
+```range()```computes values as needed. It does not actually store a large range of numbers.
+
+## enumerate() FUNCTION
+
+The enumerate function adds an extra counter value to iteration 
+```python
+
+names = ['bo', 'bob', 'bobo']
+for i, name in enumerate(names):
+	# i = 0, name = 'bo'
+	# i = 1, name = 'bob'
+	# i = 2, name = 'bobo'
+```
+
+The general form is ``` enumerate(sequence [, start=0])```. Start is optional. A good example of using enumerate() is tracking line numbers while readig a file:
+
+```python
+with open(filename) as f:
+	for line_no, line in enumerate(f, start=1):
+		do_something
+```
+
+In the end, enumerate is a nice shortcut for:
+```python
+
+i=0
+for x in s:
+	do_something
+	i+=1
+```
+Enumerate is less typing and runs slighlty faster
+
