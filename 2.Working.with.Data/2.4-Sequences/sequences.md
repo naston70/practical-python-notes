@@ -88,3 +88,57 @@ There are some common functions to reduce a sequence to a single value.
 >>>
 ```
 
+## ITERATION OVER A SEQUENCE
+
+The for-loop iterates over the elements in a sequence
+
+```python
+>>> s = [1,4,9,16]
+>>> for i in s:
+		print(i)
+
+1
+4
+9
+16
+>>>
+```
+
+On each iteration of the loop, you get a new item to work with. This new value is placed into the iteration variable. 
+
+```python 
+
+for x in s: do something
+
+```
+
+On each iteration, the previous value of the iteration is overwritten. After the loop finishes, the variable retains the last value.
+
+## BREAK STATEMENT
+
+You can use the ```break``` statement to break out of a loop early
+
+```python
+for name in namelist:
+	if name == 'BOB':
+		break
+
+	...statements
+```
+
+When the ```break```statement executes, it exits the loop and moves on the next statements. The ```break``` statement only applies to the inner most loop. If this loop is within another loop, it will not break the outer loop.
+
+
+## CONTINUE STATEMENT
+
+To skip one element and move to the next one use the ```continue statement```.
+
+```python
+for line in lines:
+	if line == '\n':
+		continue
+```
+
+This is useful when the current item is not of interest or needs to be ignored in the processing.
+
+## LOOPING OVER INTEGERS
