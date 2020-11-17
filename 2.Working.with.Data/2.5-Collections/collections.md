@@ -66,4 +66,25 @@ for name, shares, price in portfolio:
 
 holdings['IBM']			# [ (50, 91.1), (100, 45.23) ]
 ```
-The defaultdict ensures that everytime you access a key you get a default value 
+The defaultdict ensures that everytime you access a key you get a default value
+
+
+###Example: Keeping a History
+
+Problem: We want a history of the last N things. Solution use a ```deque```
+
+```python
+from collections import deque
+
+history = deque(maxlen=N)
+
+with open(filename) as f:
+	for line in f:
+		history.append(line)
+		...
+```
+#EXERCISES
+
+The coolections module might be one of the most useful library modules for dealing with special purpose kinds of data handling problems such as tabulating and indexing
+
+ 
