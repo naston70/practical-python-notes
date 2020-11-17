@@ -85,6 +85,5 @@ with open(filename) as f:
 ```
 #EXERCISES
 
-The coolections module might be one of the most useful library modules for dealing with special purpose kinds of data handling problems such as tabulating and indexing
+The collections module might be one of the most useful library modules for dealing with special purpose kinds of data handling problems such as tabulating and indexing
 
- 
