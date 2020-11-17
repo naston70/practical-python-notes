@@ -229,7 +229,96 @@ pairs = zip(columns, values)
 # ('name', 'goog'), ('shares', 100)
 ```
 
-To get the result you must iterate. You can use multiple variables to unpack tuples as shown earlier.
+To get the result you must iterate. You can use multiple variables to unpack tuples as shown earlier. ``` for column, value in pairs: ```
+
+A common use of ``` zip ```is to create key/value pairs for cnstructing dictionaires.
+
+```python
+d = dict(zip(colums, values))
+```
+
+# EXERCISES.
+
+exercise in interpreter:
+
+```python
+
+Type "help", "copyright", "credits" or "license" for more information.
+>>> for n in range(10):
+...     print(n, end = '*')
+...
+0*1*2*3*4*5*6*7*8*9*>>>
+>>>
+>>> for n in range(10,0,-1):
+...     print(n, end = '*')
+...
+10*9
+>>>
+>>>
+>>> for n in range(0,10,2):
+...     print(n, end = '*')
+...
+0*2*4*6*8*>>>
+>>>
+>>> data = [4,9,1,25,16,100,49]
+>>> min(data)
+1
+>>> max(data)
+100
+>>> sum(data)
+204
+>>>
+>>> for x in data:
+...     print(x)
+...
+4
+9
+1
+25
+16
+100
+49
+>>> for n,x in enumerate( data):
+...     print(x)
+...
+4
+9
+1
+25
+16
+100
+49
+>>> for n,x in enumerate( data):
+...     print(n,x)
+...
+0 4
+1 9
+2 1
+3 25
+4 16
+5 100
+6 49
+>>> prices = {
+...         'GOOG' : 490.1,
+...         'AA' : 23.45,
+...         'IBM' : 91.1,
+...         'MSFT' : 34.23
+...     }
+>>>
+>>> prices.items()
+dict_items([('GOOG', 490.1), ('AA', 23.45), ('IBM', 91.1), ('MSFT', 34.23)])
+>>> pricelist = list(zip(prices.values(), prices.keys()))
+>>> pricelist
+[(490.1, 'GOOG'), (23.45, 'AA'), (91.1, 'IBM'), (34.23, 'MSFT')]
+>>>
+>>> a = [1,2,3,4]
+>>> b = ['x','y','z','w']
+>>> c = [0.2,0.4,0.6,0.8]
+>>> list(zip(a,b,c))
+[(1, 'x', 0.2), (2, 'y', 0.4), (3, 'z', 0.6), (4, 'w', 0.8)]
+>>>
+
+```
 
 
 
