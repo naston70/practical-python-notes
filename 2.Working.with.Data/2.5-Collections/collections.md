@@ -85,5 +85,25 @@ with open(filename) as f:
 ```
 #EXERCISES
 
-The collections module might be one of the most useful library modules for dealing with special purpose kinds of data handling problems such as tabulating and indexing
+The collections module might be one of the most useful library modules for dealing with special purpose kinds of data handling problems such as tabulating and indexing.
+
+
+Suppose you want to tabulate the total number of shares of each stock. This is easy using ```Counter```objects.
+
+```python
+
+python3 -i report.py
+current:  28686.1
+Gain:  -15985.050000000003
+[('AA', 100, 9.22, -22.980000000000004), ('IBM', 50, 106.28, 15.180000000000007), ('CAT', 150, 35.46, -47.98), ('MSFT', 200, 20.89, -30.339999999999996), ('GE', 95, 13.48, -26.889999999999997), ('MSFT', 50, 20.89, -44.209999999999994), ('IBM', 100, 106.28, 35.84)]
+>>> portfolio = read_portfolio('Data/portfolio.csv')
+>>> from collections import Counter
+>>> holdings= Counter()
+>>> for s in portfolio:
+...     holdings[s['name']] += s['shares']
+...
+>>> holdings
+Counter({'MSFT': 250, 'IBM': 150, 'CAT': 150, 'AA': 100, 'GE': 95})
+>>>
+```
 
