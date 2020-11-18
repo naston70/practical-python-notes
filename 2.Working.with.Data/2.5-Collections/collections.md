@@ -106,4 +106,53 @@ Gain:  -15985.050000000003
 Counter({'MSFT': 250, 'IBM': 150, 'CAT': 150, 'AA': 100, 'GE': 95})
 >>>
 ```
+Carefully observe how the multiple entries for MSFT and IBM in portfolio get combined into a single entry here.
 
+You can use a Counter just like a dictionary to retrieve individual values:
+
+```python
+>>> holdings['IBM']
+150
+>>> holdings['MSFT']
+250
+>>>
+```
+
+If you want to rank values, do this:
+
+```python
+>>> # Get three most held stocks
+>>> holdings.most_common(3)
+[('MSFT', 250), ('IBM', 150), ('CAT', 150)]
+>>>
+```
+
+Add another portfolio and make a new Counter:
+
+```python
+
+>>> portfolio2 = read_portfolio('Data/portfolio2.csv')
+>>> holdings2 = Counter()
+>>> for s in portfolio2:
+          holdings2[s['name']] += s['shares']
+
+>>> holdings2
+Counter({'HPQ': 250, 'GE': 125, 'AA': 50, 'MSFT': 25})
+>>>
+
+```
+
+And can combine them with one simple operation:
+
+```python
+
+>>> holdings
+Counter({'MSFT': 250, 'IBM': 150, 'CAT': 150, 'AA': 100, 'GE': 95})
+>>> holdings2
+Counter({'HPQ': 250, 'GE': 125, 'AA': 50, 'MSFT': 25})
+>>> combined = holdings + holdings2
+>>> combined
+Counter({'MSFT': 275, 'HPQ': 250, 'GE': 220, 'AA': 150, 'IBM': 150, 'CAT': 150})
+>>>
+
+```
