@@ -143,5 +143,45 @@ If you change the square brackets to curly braces, you get something knwon as a 
 Ie, this determines the set of unique stock names that are in the portfolio:
 
 ```python
-names = { s['name'] for s in portfolio]}
+names = { s['name'] for s in portfolio }
+```
 
+If you specify key:value pairs you can build a dictionary. For example, make a dictionary that maps the name of a s tock to the total number of shares held.
+
+```python
+
+holdings = { name: 0 for name in names}
+
+```
+
+This is known as a dictionary comprehension. 
+
+## Extracting Data From CSV Files
+
+Knowing how to use various combinations of list, set and dictionary comprehensions can be useful in various forms of data processing. Here is an example that shows how to extract selected columns from a csv file.
+
+```python
+>>> import csv
+>>> f = open('Data/portfoliodate.csv')
+>>> rows = csv.reader(f)
+>>> headers = next(rows)
+>>> headers
+['name', 'date', 'time', 'shares', 'price']
+>>>
+
+```
+
+Next define a variable that lists the columns wanted.
+
+```python
+>>> select = ['name', 'shares', 'price']
+>>>
+```
+Now, locate the indicies of the above columns in the source CSV file.
+
+```python
+>>> indices = [ headers.index(colname) for colname in select ]
+>>> indices
+[0, 3, 4]
+>>>
+```
