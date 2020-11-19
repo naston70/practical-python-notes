@@ -127,5 +127,21 @@ A list of all portfolio holdings that cost more than $10000
 >>>
 ```
 
+## Exercies 2.22: Data Extraction
 
+Show how you could build a list of tuples (names, shares) where name and shares are taken from portfolio.
+
+```python
+>>> name_shares = [ (s['name'], s['shares']) for s in portfolio ]
+>>> name_shares
+[('AA', 100), ('IBM', 50), ('CAT', 150), ('MSFT', 200), ('GE', 95), ('MSFT', 50), ('IBM', 100)]
+>>>
+```
+
+If you change the square brackets to curly braces, you get something knwon as a set comprehension. This gives unique or distinct values.
+
+Ie, this determines the set of unique stock names that are in the portfolio:
+
+```python
+names = { s['name'] for s in portfolio]}
 
