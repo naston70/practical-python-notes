@@ -100,6 +100,32 @@ IndentationError: unexpected indent
 
 ###Exercise 2.21: Data Queries
 
+First a list of portfolio holding with more than 100 shares
+
+```python
+>>> more100 = [s for s in portfolio if s['shares'] > 100]
+>>> more100
+[{'name': 'CAT', 'shares': 150, 'price': 83.44}, {'name': 'MSFT', 'shares': 200, 'price': 51.23}]
+>>>
+```
+
+All portfolio holdings for MSFT and IBM stocks.
+
+```python
+>>> msftIBM = [s for s in portfolio if s['name'] in {'MSFT','IBM'}]
+>>> msftIBM
+[{'name': 'IBM', 'shares': 50, 'price': 91.1}, {'name': 'MSFT', 'shares': 200, 'price': 51.23}, {'name': 'MSFT', 'shares': 50, 'price': 65.1}, {'name': 'IBM', 'shares': 100, 'price': 70.44}]
+>>>
+```
+A list of all portfolio holdings that cost more than $10000
+
+```python
+>>> cost10k = [s for s in portfolio if s['shares'] * s['price'] > 10000 ]
+>>>
+>>> cost10k
+[{'name': 'CAT', 'shares': 150, 'price': 83.44}, {'name': 'MSFT', 'shares': 200, 'price': 51.23}]
+>>>
+```
 
 
 
