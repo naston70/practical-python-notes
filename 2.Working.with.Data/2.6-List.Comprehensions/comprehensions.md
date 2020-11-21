@@ -185,3 +185,16 @@ Now, locate the indicies of the above columns in the source CSV file.
 [0, 3, 4]
 >>>
 ```
+
+Finally, read a row of data and turn it into a dictionary using a dict comprehension.
+```python
+row = next(rows)
+
+record = { colname: row[index] for colname, index in zip(slect, indices) }
+
+# Then to read the rest of the file:
+
+portfolio = [ { colname: row[index] for colname, index in zip(select, indices) for row in rows } ]
+```
+This reduces much of the previous read_portfolio() function to a single statement.
+
