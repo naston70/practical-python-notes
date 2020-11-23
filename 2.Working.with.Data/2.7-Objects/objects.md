@@ -181,3 +181,38 @@ Now, read a row of data from the above file:
 >>> row 
 ['AA', '100', '32.20']
 >>>
+```
+This row isnt enough to do calculations because the types are wrong, however, the data can be paired up with the types specified in ```types```
+
+```python
+
+>>> types[1]
+<type 'int'>
+>>> row[1]
+'100'
+```
+Try converting one of the values:
+
+```python
+>>> types[1](row[1])	#same as int(row[1])
+100
+>>>
+
+```
+Try converting a different value:
+
+```python
+>>> types[2](row[2])
+32.2
+>>>
+```
+
+Try the calculation with converted values:
+
+```python
+>>> types[1](row[1])*types[2](row[2])
+3220.0000000005
+>>>
+```
+
+Zip the column types with the fields and look at the result.
