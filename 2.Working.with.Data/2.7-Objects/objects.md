@@ -68,6 +68,116 @@ Use the ```is```operator to check if two values are exactly the same object
 >>> b = a
 >>> a is b
 True
+```
 
+```is```compares the object identity (as an int). The identity can be obtained using ```id()```
 
+```python
+>>>id(a)
+3588944
+>>>id(b)
+3588944
+```
 
+It is almost always better to use == for checking objects.
+
+###Shallow Copies
+
+Lists and Dicts have methods for copying.
+
+```python
+a = [2,3,[100,101],4]
+b = list(a)
+a is b
+False
+```
+Its a new list but the list items are shared
+```python
+a[2].append(102)
+b[2]	#[100,101,102]
+
+a[2] is b[2]
+
+True
+```
+
+##DEEP COPIES
+
+Sometimes you need to make a copy of an object and all the objects contained within it, You can use the copy module foe this:
+
+```python
+a = [2,3,[100,101],4]
+import copy
+b = copy.deepcopy(a)
+
+a[2].append(102)
+b[2]
+[100,101]
+a[2] is b[2]
+False
+```
+##Names, Values, Types
+
+Variable names do not have a type. Its only a name, but the values do have an underlying type.
+
+```type()``` will tell you what it is. The type name is usually used as a function that creates or converts a value to that type.
+
+##Type Checking
+
+How to tell if an object is a specific type:
+
+```python
+if isinstance(a, list):
+	print('a  is a list')
+```
+
+Checking for one of many possibles types:
+```python
+if isinstance(a, (list, tuple)):
+	print(' a is list, tuple')
+```
+
+##EVERYTHING IS AN OBJECT
+
+Numbers, strings, lists, functions, exceptions, instances, etc are all objects. It means that all objects that can be named can be passed around as data, placed in containers etc, without any restrictions. There are no special kinds of objects. 
+
+#EXERCISES
+
+In portfolio.csv we read data organised as columns that looks like this:
+
+```csv
+name, shares, prce
+'aa', 100, 32.20
+...
+```
+In previous code, we used the csv module to read the file, but still had to perform manual type conversions. ie:
+
+```python
+for row in rows:
+	name = row[0]
+	shares = int(row[1])
+	price = float(row[2])
+```
+
+This kind of conversion can also be performed in a more clever manner using some basic list operations.
+
+Make a list that contains the names of the conversion functions you would use to convert each column into the appropriate type:
+
+```python
+>>>types = [str, int, float]
+>>>
+```
+
+The reason you can even create this list is that evrything in Python is first-class. So if you want to have a list of functions thats fine. The items in the list you created are functions for converting a value x into a given type (eg, str(x), int(x), float(x))
+
+Now, read a row of data from the above file:
+
+```python
+>>> import csv
+>>> f = open('Data/portfolio.csv')
+>>> rows = csv.reader(f)
+>>> headers = next(rows)
+>>> row = next(rows)
+>>> row 
+['AA', '100', '32.20']
+>>>
