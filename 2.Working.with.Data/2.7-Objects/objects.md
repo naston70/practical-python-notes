@@ -58,5 +58,16 @@ If you are unaware of this sharing it can cause issues in your code. ie: You mod
 
 This is one of the reasons why primitive types (int,float,string) are immutabe, read-only.
 
+##Identity and References
+
+Use the ```is```operator to check if two values are exactly the same object
+
+```python
+
+>>> a = [1,2,3]
+>>> b = a
+>>> a is b
+True
+
 
 
