@@ -37,7 +37,26 @@ This means that modifying a value affects all references:
 >>>c
 [[1,2,3,999][1,2,3,999]]
 ```
-A change in the original list shows up everywhere else. This is because no copies were ever made. Everything is pointing to the same thing, a
+A change in the original list shows up everywhere else. This is because no copies were ever made. Everything is pointing to the same thing, a.
+
+###Reassigning Values
+Reassigning a value never overwrites the memory used by the previous value.
+```python
+a = [1,2,3]
+b = a
+a = [4,5,6]
+
+print(a)	#[4,5,6]
+print(b)	#[1,2,3]
+```
+
+VARIABLES ARE NAMES. NOT MEMORY LOCATIONS
+
+###Some Dangers:
+
+If you are unaware of this sharing it can cause issues in your code. ie: You modify some data thinking its your own private copy and it accidentally corrupts some data in another part of the program. 
+
+This is one of the reasons why primitive types (int,float,string) are immutabe, read-only.
 
 
 
