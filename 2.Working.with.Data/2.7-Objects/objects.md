@@ -216,3 +216,34 @@ Try the calculation with converted values:
 ```
 
 Zip the column types with the fields and look at the result.
+
+```python
+>>> r = list(zip(types,row))
+>>> r
+[(<type 'str'>, 'AA'), (<type 'int'>, '100'), (<type 'float'>, 32.20)]
+>>>
+
+```
+Notice this has paired a type conversion with a value. ie 'int' is paired with the value '100'.
+
+The zipped list is useful if you want to perform conversions on all of the claues, one after the other.
+
+```python
+>>> converted = []
+>>> for func, val in zip(type, rows):
+		converted.append(func(val))
+...
+>>> converted
+['AA', 100, 32.2]
+>>> converted[1] * converted[2]
+3220.000000005
+>>>
+```
+In the loop, the func variable is one of the type conversion functions (str, int, float) and the val variable is one of the values ('AA', 100, 32.2). The expression func(val) is converting a value.
+This code can be compresses into a single list comprehension:
+
+```python
+
+>>> converted = [ func(val) for func, val in zip(types, row) ]
+>>> converted
+['AA', 100, 32.2]
