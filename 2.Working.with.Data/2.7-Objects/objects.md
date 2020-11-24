@@ -247,3 +247,27 @@ This code can be compresses into a single list comprehension:
 >>> converted = [ func(val) for func, val in zip(types, row) ]
 >>> converted
 ['AA', 100, 32.2]
+```
+##Exercise 2.25: Making Dictionaries
+
+Remember how the dict() function can easily make a dictionary if you have a sequence of key names and values? We can make a dictionary from the column headers...
+
+```python
+>>> headers
+['name', 'shares', 'price']
+>>> converted
+['AA', 100, 32.2]
+>>>dict(zip(headers, converted))
+```
+
+This can also be done in a single dict-comprehension:
+
+```python
+>>> {name: func(val) for name, func, val in zip(headers, types, row)}
+```
+
+##EXERCISE 2.26 - BIG PICTURE
+
+Using these techniques you could write statements that easily convert fields from just about any column oriented datafile into a Python dictionary.
+
+
