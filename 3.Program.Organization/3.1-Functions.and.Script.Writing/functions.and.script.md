@@ -31,3 +31,13 @@ A function also simplifies repeated operations:
 old_prices = read_prices('old.csv')
 new_prices = read_prices('new.csv')
 ```
+
+###What is a Function?
+
+A function is a named sequence of statements, any Python statment can be used inside.
+
+Functions can be defined in any order and must only be defined prior to actually being used during program execution.
+
+###Function Design
+
+Ideally functions should be black box. They should only operate on passed inputs and avoid global variables and mysterious side effects. The main goals are Modularity and Predictability
