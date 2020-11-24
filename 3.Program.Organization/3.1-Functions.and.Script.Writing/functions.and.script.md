@@ -41,3 +41,7 @@ Functions can be defined in any order and must only be defined prior to actually
 ###Function Design
 
 Ideally functions should be black box. They should only operate on passed inputs and avoid global variables and mysterious side effects. The main goals are Modularity and Predictability
+
+###Doc Strings
+
+It is good practice to include docs in the form of a doc string. Doc strings are written immediately after the name of the function. They write a short one sentence summary of what they function does  
