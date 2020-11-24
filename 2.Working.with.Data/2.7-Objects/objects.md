@@ -273,7 +273,7 @@ Using these techniques you could write statements that easily convert fields fro
 ```python
 
 f = open('Data/dowstocks.csv')
-row = csv.reader(f)
+rows = csv.reader(f)
 headers = next(rows)
 row = next(rows)
 >>>headers
