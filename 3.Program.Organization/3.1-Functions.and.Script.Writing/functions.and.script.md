@@ -44,4 +44,22 @@ Ideally functions should be black box. They should only operate on passed inputs
 
 ###Doc Strings
 
-It is good practice to include docs in the form of a doc string. Doc strings are written immediately after the name of the function. They write a short one sentence summary of what they function does  
+It is good practice to include docs in the form of a doc string. Doc strings are written immediately after the name of the function. They write a short one sentence summary of what the function does 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
