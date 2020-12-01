@@ -66,3 +66,41 @@ def square(x):
 If no return value is given or return is missing, ```None``` is returned
 
 ###Multiple Return Values
+Functions can only return one value. However a function may retrn multiple values by returning them in a tuple:
+
+```python
+def divide(a,b):
+	q = a // b
+	r = a % b
+    return q,r
+```
+
+###Variable Scope
+
+Programs assign values to variables
+
+
+```python
+x = value
+def foo():
+	y = value
+```
+
+Variable assignments occur outside and insdie function definititions. Variables defined outside are 'global', Variables inside a local.
+
+###Local Variables
+
+Variables assigned inside private functions are private
+
+
+```python
+def read_portfolio(filename):
+    portfolio = []
+    for line in open(filename):
+        fields = line.split(',')
+        s = (fields[0], int(fields[1]), float(fields[2]))
+        portfolio.append(s)
+    return portfolio
+```
+
+In this function, filename, portfolio, line, fields and s are local variables. Locals cannot conflict with variables found elsewhere
