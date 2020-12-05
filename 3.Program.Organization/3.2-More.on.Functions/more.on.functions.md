@@ -104,3 +104,28 @@ def read_portfolio(filename):
 ```
 
 In this function, filename, portfolio, line, fields and s are local variables. Locals cannot conflict with variables found elsewhere
+
+### Global Functions:
+
+Functions can freely access the values of globals defined in the same file
+
+```python
+name = 'Dave'
+
+def greeting():
+    print('hello', name)
+
+```
+However, functions cant modify global variables. ALL ASSIGNMENTS IN FUNCTIONS ARE LOCAL.
+
+### MODIFYING GLOBALS
+
+If you must modify a global variable you must declare it as such.
+```python
+name = 'Dave'
+
+def spam():
+    global name
+    name = 'guido'
+```
+This gloabl declaration must appear before its use and the corresponding variable must exist in the same file as the function. 
