@@ -129,3 +129,27 @@ def spam():
     name = 'guido'
 ```
 This gloabl declaration must appear before its use and the corresponding variable must exist in the same file as the function. 
+
+## ARGUMENT PASSING
+
+When you call a function, the arument variables are names that refer to passed values. These values ar NOT copies. If mutable data types are passed (lists, dicts, etc) they can be modified 'in-place'
+
+```python
+def foo(items):
+    items.apped(444)
+
+a = 123
+foo(a)
+print(a)      #[1,2,3,444]
+```
+
+### Reassignemt vs Modifying
+
+Make sure the subtle difference between modify a value and reassigning a variable name.
+
+```python
+def foo(items):
+    items.append(42) #modifies the input object
+
+def bar(items):
+    items = [4,5,6]  #changes local item variable to point to different object
