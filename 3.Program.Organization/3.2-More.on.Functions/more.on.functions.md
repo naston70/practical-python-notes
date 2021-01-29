@@ -1,4 +1,4 @@
-###Calling a Function
+### Calling a Function
 
 Consider this function:
 
@@ -17,7 +17,7 @@ Or you can calle the function with keyword arguments
 prices = read_prices(filename = 'prices.csv', debug = True)
 ```
 
-###Default Arguments
+### Default Arguments
 
 Sometimes you may want an argument to be optional. If so assign a default value in the function definition:
 
@@ -32,7 +32,7 @@ e = read_prices('prices.csv', True)
 ```
 Defaults must appear at the end of the arguments list (all non-optional go first)
 
-###Prefer keyword arguments for optional arguments
+### Prefer keyword arguments for optional arguments
 
 Compare and contrast these two different calling styles:
 
@@ -45,7 +45,7 @@ parse_data(data, debug=True, ignore_errors=True)
 ```
 In most cases keyword arguments improve code clarity, especially for arguments that serve as flags or which are related to optional features.
 
-###Design Best Practice:
+### Design Best Practice:
 
 Always give short but meaningful names to function arguments. Someone using a function may want to use the keyword calling style.
 
@@ -55,7 +55,7 @@ d = read_prices('prices.csv', debug=True)
 
 Python development tools will show the names in help features and documentation.
 
-###Returning Values
+### Returning Values
 
 The ```return``` statement returns a value
 
@@ -65,7 +65,7 @@ def square(x):
 ```
 If no return value is given or return is missing, ```None``` is returned
 
-###Multiple Return Values
+### Multiple Return Values
 Functions can only return one value. However a function may retrn multiple values by returning them in a tuple:
 
 ```python
@@ -75,7 +75,7 @@ def divide(a,b):
     return q,r
 ```
 
-###Variable Scope
+### Variable Scope
 
 Programs assign values to variables
 
@@ -88,7 +88,7 @@ def foo():
 
 Variable assignments occur outside and insdie function definititions. Variables defined outside are 'global', Variables inside a local.
 
-###Local Variables
+### Local Variables
 
 Variables assigned inside private functions are private
 
