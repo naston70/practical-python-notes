@@ -1,57 +1,32 @@
 # pcost.py
-# Opens portfolio.csv, reads all lines and calculates total to purchase all of the shares
-# Exercise 1.27
 
-# def portfolio_cost(filename):
-# 	f = open('Data/missing.csv', 'rt')
-# 	headers = next(f).split(',')
-# 	cost = 0
-# 	for line in f:
-		
-# 		row = line.split(',')
-# 		try: 
-# 			cost += int(row[1]) * float(row[2].strip('\n'))
-# 		except ValueError:
-# 			print('Field missing', line)
-
-# 	f.close()
-# 	return cost
-
-# cost = portfolio_cost('Data/missing.csv')
-# print('Total cost: ', cost)
-
-
-# #print(f'Total cost of portfolio: {total}')
-
-
-# # Expected output:
-# # ➜  Work git:(main) ✗ python3 pcost.py
-# #    Total cost of portfolio: 44671.15
-import csv, sys
-
+import csv
 def portfolio_cost(filename):
-	cost = 0
-	f = open(filename)
-	#print('here', f.read())
-	rows = csv.reader(f)
-	headers = next(rows)
-	for row in rows:
-		shares = row[1]; price = row[2]
-		try:
-			cost += int(shares) * float(price)
-		except ValueError:
-			print('Field missing', row)
-	f.close()
-	return cost
+    '''
+    Computes the total cost (shares*price) of a portfolio file
+    '''
+    total_cost = 0.0
 
+    with open(filename) as f:
+        rows = csv.reader(f)
+        headers = next(rows)
+        for rowno, row in enumerate(rows, start=1):
+            record = dict(zip(headers, row))
+            try:
+                nshares = int(record['shares'])
+                price = float(record['price'])
+                total_cost += nshares * price
+            # This catches errors in int() and float() conversions above
+            except ValueError:
+                print(f'Row {rowno}: Bad row: {row}')
 
+    return total_cost
+
+import sys
 if len(sys.argv) == 2:
-	filename = sys.argv[1]
-	print(filename)
-    
+    filename = sys.argv[1]
 else:
-    filename = 'Data/portfolio.csv'
-    print('hard-coded')
+    filename = input('Enter a filename:')
 
 cost = portfolio_cost(filename)
-print('Total cost: ', cost)
+print('Total cost:', cost)
